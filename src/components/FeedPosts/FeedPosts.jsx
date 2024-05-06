@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import FeedPost from './FeedPost'
 import { Box, Container, Flex, Skeleton, SkeletonCircle, VStack } from '@chakra-ui/react'
 
@@ -14,7 +14,7 @@ const FeedPosts = () => {
 
   return (
     <Container maxW={"container.sm"} py={10} px={2}>
-      {isLoading && [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((_, index) => (
+      {isLoading && [0, 1, 2, 3, 4, 5, 6, 7].map((_, index) => (
         <VStack key={index} gap={4} alignItems={"flex-start"} mb={10}>
           <Flex gap={2} >
             <SkeletonCircle size={10} />
