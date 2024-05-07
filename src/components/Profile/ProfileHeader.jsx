@@ -29,16 +29,7 @@ const ProfileHeader = () => {
                         </Flex>
                     
                     
-                    <Flex gap={4} alignItems={"center"} justifyContent={"center"}>
-                        <Button
-                            bg={"blue.500"}
-                            color={"white"}
-                            _hover={{ bg: "blue.600" }}
-                            size={{ base: "xs", md: "sm" }}
-                        >
-
-                        </Button>
-                    </Flex>
+                    
                     
                 </Flex>
 
