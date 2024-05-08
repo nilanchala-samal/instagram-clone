@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useSignout from "../../hooks/useSignout";
 
 const SuggestedHeader = () => {
-	const {handleLogout,   isLoggingOut} = useSignout();
+	const { handleLogout, isLoggingOut } = useSignout();
 	const authUser = useAuthStore((state) => state.user);
 
 	if (!authUser) return null;
