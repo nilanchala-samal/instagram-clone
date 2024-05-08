@@ -1,16 +1,11 @@
-import { Box, Grid, Skeleton, VStack } from "@chakra-ui/react";
-import { useEffect, useState } from "react"
+import { Box, Flex, Grid, Skeleton, Text, VStack } from "@chakra-ui/react";
+import useGetUserPosts from "../../hooks/useGetUserPosts";
 import ProfilePost from "./ProfilePost";
 
 const ProfilePosts = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 1000);
-    }, [])
-
+    const { isLoading, posts } = useGetUserPosts();
+    const noPostsFound = !isLoading && posts.length === 0;
+    if (noPostsFound) return <NoPostsFound />;
     return (
         <Grid
             templateColumns={{
@@ -20,7 +15,7 @@ const ProfilePosts = () => {
             gap={1}
             columnGap={1}
         >
-            {isLoading && [0, 1, 2, 3, 4, 5].map((_, index) => (
+            {isLoading && [0, 1, 2].map((_, index) => (
                 <VStack key={index} alignItems={"flex-start"} gap={4}>
                     <Skeleton w={"full"}>
                         <Box h={"300px"}>contents wrapped</Box>
@@ -29,18 +24,21 @@ const ProfilePosts = () => {
             ))}
             {!isLoading && (
                 <>
-                    <ProfilePost img='/img1.png'/>
-                    <ProfilePost img='/img2.png'/>
-                    <ProfilePost img='/img3.png'/>
-                    <ProfilePost img='/img4.png'/>
-                    <ProfilePost img='/madara.jpg'/>
-                    <ProfilePost img='/obito.jpg'/>
-                    <ProfilePost img='/itachi.jpg'/>
-                    <ProfilePost img='/naruto.jpg'/>
+                    {posts.map((post) => (
+                        <ProfilePost post={post} key={post.id} />
+                    ))}
                 </>
             )}
         </Grid>
-    )
-}
+    );
+};
 
-export default ProfilePosts
+export default ProfilePosts;
+
+const NoPostsFound = () => {
+    return (
+        <Flex flexDir='column' textAlign={"center"} mx={"auto"} mt={10}>
+            <Text fontSize={"2xl"}>No Posts Found🤔</Text>
+        </Flex>
+    );
+};
