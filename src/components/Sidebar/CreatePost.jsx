@@ -88,11 +88,13 @@ const CreatePost = () => {
 
 						<Input type='file' hidden ref={imageRef} onChange={handleImageChange} />
 
-						<BsFillImageFill
-							onClick={() => imageRef.current.click()}
-							style={{ marginTop: "15px", marginLeft: "5px", cursor: "pointer" }}
-							size={16}
-						/>
+						{!selectedFile && (
+							<BsFillImageFill
+								onClick={() => imageRef.current.click()}
+								style={{ marginTop: "15px", marginLeft: "5px", cursor: "pointer" }}
+								size={16}
+							/>
+						)}
 						{selectedFile && (
 							<Flex mt={5} w={"full"} position={"relative"} justifyContent={"center"}>
 								<Image src={selectedFile} alt='Selected img' />
