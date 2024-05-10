@@ -51,12 +51,12 @@ const Search = () => {
                             </FormControl>
 
                             <Flex w={"full"} justifyContent={"flex-end"}>
-                                <Button type='submit' ml={"auto"} size={"sm"} my={4} isLoading={isLoading}>
+                                <Button type='submitA' ml={"auto"} size={"sm"} my={4} isLoading={isLoading}>
                                     Search
                                 </Button>
                             </Flex>
                         </form>
-                        {user && <SuggestedUser user={user} setUser={setUser} />}
+                        {user && <SuggestedUser user={user} setUser={setUser} onClose={onClose} />}
                     </ModalBody>
                 </ModalContent>
             </Modal>
