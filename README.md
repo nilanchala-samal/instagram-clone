@@ -11,7 +11,7 @@ An Instagram clone built with React.js, Firebase, and Chakra UI.
 
 ## Demo
 
-[Live Demo]((https://social-insta-clone-nilanchal.vercel.app/))
+[Live Demo](https://social-insta-clone-nilanchal.vercel.app/)
 
 ## Installation
 
