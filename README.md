@@ -11,13 +11,13 @@ An Instagram clone built with React.js, Firebase, and Chakra UI.
 
 ## Demo
 
-[Live Demo]([https://your-demo-url.com](https://social-insta-clone-nilanchal.vercel.app/))
+[Live Demo]((https://social-insta-clone-nilanchal.vercel.app/))
 
 ## Installation
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/instagram-clone.git`
+1. Clone the repository: `git clone https://github.com/nilanchala-samal/instagram-clone.git`
 2. Navigate to the project directory: `cd instagram-clone`
 3. Install dependencies: `npm install`
 4. Set up Firebase:
