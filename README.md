@@ -1,13 +1,14 @@
 # Instagram Clone
 
-An Instagram clone built with React.js, Firebase, and Chakra UI.
+An Instagram clone built with React.js, Vite, Firebase, and Chakra UI.
 
 ## Features
 
 - User authentication
-- Posting images
+- Posting and deleting images
 - Liking and commenting on posts
 - Following users
+- Explore other users profile
 
 ## Demo
 
@@ -27,7 +28,7 @@ To run this project locally, follow these steps:
    - Create a new file named `firebase.js` in the `src/firebase` directory of your project.
    - Copy and paste the Firebase initialization code into the `firebase.js` file and remove the hard quoted values 
      from the Firebase config.
-     Example: Instead of writing `apiKey: api-key`, write `apiKey: import.meta.env.VITE_FIREBASE_API_KEY`. Replace     ` api-key` with your actual apiKey.
+     Example: Instead of writing `apiKey: your-api-key`, write `apiKey: import.meta.env.VITE_FIREBASE_API_KEY`.
 5. Install the project dependencies using npm: `npm install`
 6. Start the deployment server with Vite: `npm run dev`
 
