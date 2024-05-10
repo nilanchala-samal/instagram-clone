@@ -19,15 +19,22 @@ To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/nilanchala-samal/instagram-clone.git`
 2. Navigate to the project directory: `cd instagram-clone`
-3. Install dependencies: `npm install`
+3. Create a new file named .env in the root directory of your project.
 4. Set up Firebase:
    - Create a Firebase project
-   - Copy your Firebase config and paste it into src/firebase.js
-5. Start the development server: `npm start`
+   - Copy your Firebase config and paste it into `.env` file. Make sure to add `VITE_` prefix to the variables. 
+     Example: `VITE_FIREBASE_API_KEY=your-api-key` ('FIREBASE' is optional)
+   - Create a new file named `firebase.js` in the `src/firebase` directory of your project.
+   - Copy and paste the Firebase initialization code into the `firebase.js` file and remove the hard quoted values 
+     from the Firebase config.
+     Example: Instead of writing `apiKey: api-key`, write `apiKey: import.meta.env.VITE_FIREBASE_API_KEY`. Replace     ` api-key` with your actual apiKey.
+5. Install the project dependencies using npm: `npm install`
+6. Start the deployment server with Vite: `npm run dev`
 
 ## Technologies Used
 
 - React.js
+- Vite
 - Firebase (Authentication, Firestore, Storage)
 - Chakra UI
 
